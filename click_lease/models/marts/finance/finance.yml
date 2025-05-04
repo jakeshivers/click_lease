@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: fact_loans
+    description: >
+      One row per loan application, enriched with repayment summary and default status.
+    columns:
+      - name: application_id
+        description: Unique identifier for the loan application
+        tests:
+          - not_null
+          - unique
+
+      - name: applicant_id
+        description: Foreign key to the applicant
+
+      - name: application_date
+        description: Date the loan application was submitted
+
+      - name: loan_amount
+        description: Approved or requested loan amount
+
+      - name: term_months
+        description: Duration of the loan term in months
+
+      - name: purpose
+        description: Purpose of the loan
+
+      - name: status
+        description: Application status (approved, denied, etc.)
+
+      - name: credit_score
+        description: Credit score at time of application
+
+      - name: risk_band
+        description: Risk level classification based on credit score
+
+      - name: total_repaid
+        description: Sum of all repayments made for this application
+
+      - name: number_of_payments
+        description: Total number of payments made
+
+      - name: is_defaulted
+        description: True if any payment was marked as defaulted
