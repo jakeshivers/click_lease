@@ -1,29 +1,45 @@
-name: dbt workflow
+name: dbt prod
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * *'  # Runs daily at 12:00 UTC
 
 jobs:
-  dbt:
-    runs-on: ubuntu-latest
+  run:
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Run dbt
-        uses: dbt-labs/dbt-action@f2cdeccf4a9e79efc0b4fca6e91bc14a0e846b0c
-
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          dbt-version: 1.9.4
-          commands: |
-            dbt deps
-            dbt run
-            dbt test
-          profiles-dir: click_lease/.dbt
+          python-version: '3.10'
+
+      - name: Install dbt
+        run: pip install dbt-snowflake==1.9.4
+
+      - name: Set up dbt profile
+        run: |
+          mkdir -p ~/.dbt
+          cat <<EOF > ~/.dbt/profiles.yml
+click_lease:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: $DBT_ACCOUNT
+      user: $DBT_USER
+      password: $DBT_PASSWORD
+      role: $DBT_ROLE
+      database: $DBT_DATABASE
+      warehouse: $DBT_WAREHOUSE
+      schema: $DBT_SCHEMA
+      threads: 4
+      client_session_keep_alive: false
+EOF
         env:
           DBT_ACCOUNT: ${{ secrets.DBT_ACCOUNT }}
           DBT_USER: ${{ secrets.DBT_USER }}
@@ -32,3 +48,12 @@ jobs:
           DBT_DATABASE: ${{ secrets.DBT_DATABASE }}
           DBT_WAREHOUSE: ${{ secrets.DBT_WAREHOUSE }}
           DBT_SCHEMA: ${{ secrets.DBT_SCHEMA }}
+
+      - name: Install dbt packages
+        run: dbt deps
+
+      - name: Run dbt models
+        run: dbt run
+
+      - name: Run dbt tests
+        run: dbt test
