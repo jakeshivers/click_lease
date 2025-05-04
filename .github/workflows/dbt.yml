@@ -3,7 +3,7 @@ name: dbt prod
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 12 * * *'  # Runs daily at 12:00 UTC
+    - cron: '0 12 * * *'
 
 jobs:
   run:
@@ -21,25 +21,8 @@ jobs:
       - name: Install dbt
         run: pip install dbt-snowflake==1.9.4
 
-      - name: Set up dbt profile
-        run: |
-          mkdir -p ~/.dbt
-          cat <<EOF > ~/.dbt/profiles.yml
-click_lease:
-  target: dev
-  outputs:
-    dev:
-      type: snowflake
-      account: $DBT_ACCOUNT
-      user: $DBT_USER
-      password: $DBT_PASSWORD
-      role: $DBT_ROLE
-      database: $DBT_DATABASE
-      warehouse: $DBT_WAREHOUSE
-      schema: $DBT_SCHEMA
-      threads: 4
-      client_session_keep_alive: false
-EOF
+      - name: dbt deps
+        run: dbt deps --profiles-dir click_lease/.dbt
         env:
           DBT_ACCOUNT: ${{ secrets.DBT_ACCOUNT }}
           DBT_USER: ${{ secrets.DBT_USER }}
@@ -49,11 +32,24 @@ EOF
           DBT_WAREHOUSE: ${{ secrets.DBT_WAREHOUSE }}
           DBT_SCHEMA: ${{ secrets.DBT_SCHEMA }}
 
-      - name: Install dbt packages
-        run: dbt deps
+      - name: dbt run
+        run: dbt run --profiles-dir click_lease/.dbt
+        env:
+          DBT_ACCOUNT: ${{ secrets.DBT_ACCOUNT }}
+          DBT_USER: ${{ secrets.DBT_USER }}
+          DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
+          DBT_ROLE: ${{ secrets.DBT_ROLE }}
+          DBT_DATABASE: ${{ secrets.DBT_DATABASE }}
+          DBT_WAREHOUSE: ${{ secrets.DBT_WAREHOUSE }}
+          DBT_SCHEMA: ${{ secrets.DBT_SCHEMA }}
 
-      - name: Run dbt models
-        run: dbt run
-
-      - name: Run dbt tests
-        run: dbt test
+      - name: dbt test
+        run: dbt test --profiles-dir click_lease/.dbt
+        env:
+          DBT_ACCOUNT: ${{ secrets.DBT_ACCOUNT }}
+          DBT_USER: ${{ secrets.DBT_USER }}
+          DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
+          DBT_ROLE: ${{ secrets.DBT_ROLE }}
+          DBT_DATABASE: ${{ secrets.DBT_DATABASE }}
+          DBT_WAREHOUSE: ${{ secrets.DBT_WAREHOUSE }}
+          DBT_SCHEMA: ${{ secrets.DBT_SCHEMA }}
