@@ -1,4 +1,4 @@
-name: dbt run
+name: dbt workflow
 
 on:
   push:
@@ -7,44 +7,27 @@ on:
     branches: [main]
 
 jobs:
-  run-dbt:
+  dbt:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Run dbt
+        uses: dbt-labs/dbt-action@v1
         with:
-          python-version: '3.10'
-
-      - name: Install dbt
-        run: pip install dbt-snowflake
-
-      - name: Write dbt profile
-        run: |
-          mkdir -p ~/.dbt
-          cat > ~/.dbt/profiles.yml
-          
-click_lease:
-  target: dev
-  outputs:
-    dev:
-      type: snowflake
-      account: $DBT_ACCOUNT
-      user: $DBT_USER
-      password: $DBT_PASSWORD
-      role: $DBT_ROLE
-      database: $DBT_DATABASE
-      warehouse: $DBT_WAREHOUSE
-      schema: $DBT_SCHEMA
-      threads: 4
-
-      client_session_keep_alive: false
-
-      - name: Install dbt dependencies
-        run: dbt deps
-
-      - name: Run dbt models
-        run: dbt run
+          dbt-version: 1.9.4
+          commands: |
+            dbt deps
+            dbt run
+            dbt test
+          profiles-dir: click_lease/.dbt
+        env:
+          DBT_ACCOUNT: ${{ secrets.DBT_ACCOUNT }}
+          DBT_USER: ${{ secrets.DBT_USER }}
+          DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
+          DBT_ROLE: ${{ secrets.DBT_ROLE }}
+          DBT_DATABASE: ${{ secrets.DBT_DATABASE }}
+          DBT_WAREHOUSE: ${{ secrets.DBT_WAREHOUSE }}
+          DBT_SCHEMA: ${{ secrets.DBT_SCHEMA }}
