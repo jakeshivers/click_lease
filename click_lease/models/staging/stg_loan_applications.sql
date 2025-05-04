@@ -10,4 +10,4 @@ select
     status,
     credit_score,
     risk_band
-from  {{ source('raw', 'ra_applicants')}}
+from  {{ source('raw', 'raw_loan_applications') }} l

@@ -19,4 +19,4 @@ SELECT
     r.has_default
 FROM {{ ref('stg_loan_applications') }} l
 LEFT JOIN repayments_summary r
-  ON l.application_id = r.application_id;
+  ON l.application_id = r.application_id

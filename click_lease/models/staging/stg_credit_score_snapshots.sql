@@ -7,4 +7,4 @@ SELECT
  credit_score,
  score_source
 
-FROM {{ source('raw', 'RAW_CREDIT_SCORE_SNAPSHOTS') }}
+FROM {{ source('raw', 'raw_credit_score_snapshots') }}

@@ -6,4 +6,4 @@ SELECT
     payment_date,
     amount_paid,
     payment_status
-FROM {{ source('raw', 'raw_repayments') }};
+FROM {{ source('raw', 'raw_repayments') }}

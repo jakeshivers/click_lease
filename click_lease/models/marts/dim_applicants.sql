@@ -16,4 +16,4 @@ SELECT
 FROM {{ ref('stg_applicants') }} a
 LEFT JOIN latest_score s
   ON a.applicant_id = s.applicant_id
-WHERE s.rn = 1;
+WHERE s.rn = 1

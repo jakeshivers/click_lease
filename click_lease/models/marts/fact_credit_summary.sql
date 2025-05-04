@@ -8,4 +8,4 @@ SELECT
     MIN(application_date) AS first_application,
     MAX(application_date) AS most_recent_application
 FROM {{ ref('stg_loan_applications') }}
-GROUP BY applicant_id;
+GROUP BY applicant_id

@@ -10,7 +10,7 @@ exposures:
       Tracks loan applications, risk bands, repayment performance, and credit score trends.
 
     depends_on:
-      - ref('fact_loans')
+      - ref('fact_loans_over_time')
       - ref('dim_applicants')
 
     owner:
