@@ -26,7 +26,8 @@ jobs:
         run: pip install dbt-snowflake==1.9.4
 
       - name: dbt deps
-        run: dbt deps --profiles-dir click_lease/.dbt
+        run: dbt deps --profiles-dir .dbt
+        working-directory: click_lease/click_lease
         env:
           DBT_ACCOUNT: ${{ secrets.DBT_ACCOUNT }}
           DBT_USER: ${{ secrets.DBT_USER }}
@@ -37,7 +38,8 @@ jobs:
           DBT_SCHEMA: ${{ secrets.DBT_SCHEMA }}
 
       - name: dbt run
-        run: dbt run --profiles-dir click_lease/.dbt
+        run: dbt run --profiles-dir .dbt
+        working-directory: click_lease/click_lease 
         env:
           DBT_ACCOUNT: ${{ secrets.DBT_ACCOUNT }}
           DBT_USER: ${{ secrets.DBT_USER }}
@@ -48,7 +50,8 @@ jobs:
           DBT_SCHEMA: ${{ secrets.DBT_SCHEMA }}
 
       - name: dbt test
-        run: dbt test --profiles-dir click_lease/.dbt
+        run: dbt test --profiles-dir .dbt
+        working-directory: click_lease/click_lease
         env:
           DBT_ACCOUNT: ${{ secrets.DBT_ACCOUNT }}
           DBT_USER: ${{ secrets.DBT_USER }}
