@@ -1,0 +1,50 @@
+name: dbt run
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  run-dbt:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dbt
+        run: pip install dbt-snowflake
+
+      - name: Write dbt profile
+        run: |
+          mkdir -p ~/.dbt
+          cat > ~/.dbt/profiles.yml
+          
+click_lease:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: $DBT_ACCOUNT
+      user: $DBT_USER
+      password: $DBT_PASSWORD
+      role: $DBT_ROLE
+      database: $DBT_DATABASE
+      warehouse: $DBT_WAREHOUSE
+      schema: $DBT_SCHEMA
+      threads: 4
+
+      client_session_keep_alive: false
+
+      - name: Install dbt dependencies
+        run: dbt deps
+
+      - name: Run dbt models
+        run: dbt run

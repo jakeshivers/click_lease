@@ -1,0 +1,18 @@
+version: 2
+
+exposures:
+  - name: credit_risk_dashboard
+    label: Credit Risk & Application Monitoring
+    type: dashboard
+    maturity: low
+    url: https://looker.clicklease.com/dashboards/123
+    description: >
+      Tracks loan applications, risk bands, repayment performance, and credit score trends.
+
+    depends_on:
+      - ref('fact_loans')
+      - ref('dim_applicants')
+
+    owner:
+      name: Jake Shivers
+      email: jakeshivers@gmail.com

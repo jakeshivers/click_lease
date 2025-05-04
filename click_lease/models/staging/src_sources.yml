@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: raw
+    database: clicklease
+    schema: raw
+    tables:
+      - name: raw_applicants
+      - name: raw_loan_applications
+      - name: raw_repayments
+      - name: raw_credit_score_snapshots

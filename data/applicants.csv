@@ -1,0 +1,51 @@
+applicant_id,business_name,industry,founded_date,annual_revenue,num_employees
+cdede49a-7d60-426d-9af4-fdde924384da,Perez-Bean,Retail,2023-05-09,222552.7,18
+76fa79b7-3303-495e-9d24-03c52da89057,"Summers, Lee and Henderson",Construction,2020-12-24,1193732.62,48
+a8aacb21-9c17-4ba9-997f-59b612309cbf,Blevins-Strickland,Retail,2021-09-08,3415827.49,35
+adf60fa9-6ee2-4677-af8c-2328d78a7c8c,"Mccoy, Freeman and Patterson",Retail,2022-11-01,2993413.31,3
+cc3dffd4-c946-49dc-895c-47b57040e76c,Lopez Group,Retail,2016-12-14,559106.68,15
+3374cde8-baf9-47b4-8034-b527f69d77c5,"Kaiser, Morgan and Brooks",Manufacturing,2021-03-17,3049891.77,36
+49fb66cd-7d5f-4e39-8ba5-b7c8b9006f0a,Schaefer PLC,Construction,2019-08-30,3608496.1,45
+2b1e69d8-ce57-430e-8539-b43f41647c07,"Howard, Lee and Armstrong",Manufacturing,2016-08-26,2155647.12,29
+802bdec6-a188-454b-be1c-667dcf78cd5e,"Barrera, Kennedy and Brooks",Manufacturing,2018-03-03,1463134.47,1
+c1c5491c-5f8c-41ac-ae48-a43f5d2e9ed3,Reed-Davis,Construction,2022-04-17,3520883.04,22
+4585811e-2133-4d9d-8002-35ad499948bb,Johnson-Arias,Healthcare,2023-04-21,861849.55,49
+b5320b07-a023-428b-98a2-1a8809e7549f,Miller LLC,Healthcare,2016-11-21,600830.35,25
+3ad538a4-b3ba-442f-8ddc-cba62a5fe60f,Morris-Khan,Retail,2024-04-20,1858998.96,23
+749f09aa-50c4-451c-a8cc-df3709f2802c,Rodriguez-Durham,Manufacturing,2019-05-18,1396152.25,3
+d9ef8588-4e09-4d0b-88d9-cfeb709c8e54,Diaz-Jones,Food Services,2016-12-04,2727517.65,25
+49d9f92a-dc7d-4269-a118-648837253770,"Austin, Brown and Smith",Retail,2020-12-26,2804999.09,41
+788084c2-617d-4492-86be-f8e3f0a0c679,Shaw Inc,Manufacturing,2022-11-29,4438713.56,24
+ff83e8a1-23ad-4151-ae00-b42bc874cee5,Bishop Group,Manufacturing,2018-09-25,1042214.09,5
+0d49c26e-1670-4936-b5e2-b366ac7abbcc,Matthews-Moody,Retail,2015-07-07,3340190.26,50
+6b50b6db-bac3-4dbe-b357-7b01a2ccfe7a,"Paul, Brown and Woods",Healthcare,2015-10-01,4927585.45,15
+b5aa2574-b7cf-4a87-98c4-a1e000dc8c95,Jones and Sons,Retail,2018-09-05,1962618.5,30
+b914ccd5-cfd0-4c7e-be01-459e7d2d58fb,Bray-Smith,Healthcare,2022-10-22,897005.08,23
+03a6722d-922c-43a4-a177-ce535f48b546,"Johnson, Mckinney and Figueroa",Construction,2020-02-24,3383858.35,45
+c27ce80a-577a-4821-bb5d-88d80726da1c,Case-Johnson,Retail,2017-09-06,3084741.93,11
+a6072912-970d-478f-a600-e7b52ca1389d,Williams-Hawkins,Manufacturing,2022-02-09,3672721.31,11
+97e5dad7-4fbd-465e-8046-657e30df8495,"Jacobs, Knight and Smith",Food Services,2023-03-24,1959331.66,41
+24fe70ae-a542-4972-8ee1-e03a5a331865,Wilson-Crawford,Manufacturing,2023-12-04,1176114.35,21
+bd608b9b-9e25-47a4-b766-e30ccf0e776a,Stevens-Cordova,Retail,2023-02-11,1222335.55,3
+1fd8ca16-e757-4a6e-8471-d3ba1e0dc1ac,Clarke-Martin,Healthcare,2017-08-26,2065707.46,5
+cdb36c4b-19f8-47a5-884d-34137a29e28d,"Wiggins, Gonzalez and Richardson",Construction,2021-09-25,4574367.01,37
+78b26783-8d03-41ba-98b3-1afe1f5d78e4,Esparza Group,Healthcare,2015-06-18,1141870.07,32
+96089d0c-316c-4ca7-8cab-9a07a5f9559d,"Wagner, Williams and Willis",Food Services,2015-08-05,4434947.45,42
+2896f2cd-40a3-4700-a260-7ae58c89953e,Gutierrez LLC,Food Services,2018-09-11,800070.79,9
+5dfd515c-6c43-40a5-80c9-4f72728a962e,Clements-Willis,Construction,2023-04-28,3750446.01,35
+b750bfed-5501-49e3-b4b3-7bde230b1051,"Jordan, Carr and Holland",Healthcare,2021-08-12,3760367.68,28
+6be1fc3a-9af0-4845-bcd2-4480ca962847,Hall-Brooks,Manufacturing,2021-01-24,2057062.48,15
+672ab2f9-63f1-4d7d-b3ca-fdfc1a579aab,Kent LLC,Construction,2023-10-30,2596678.84,6
+8f31b4f9-65d4-4628-b906-514e85844e38,"Smith, Sanchez and Wilcox",Retail,2018-02-21,4319404.26,10
+e1f1638f-8768-4773-a7b6-6cf0cb6c96cc,Pollard-Potter,Construction,2020-04-25,3981188.89,28
+7e77e3ad-8809-4a1a-b34b-4289a8ad6230,Smith-Mclean,Manufacturing,2017-07-18,411285.76,25
+a2eef428-210d-46c3-a4da-462778e3e4e2,Hill and Sons,Manufacturing,2023-03-08,4980994.76,34
+033a5e23-62a6-4ebf-ab8f-d3bda0f7fb98,Rodriguez LLC,Healthcare,2022-04-01,4858284.05,1
+9443e062-9519-4457-806a-e8e98d16a8f7,Matthews-Williams,Retail,2016-08-18,3440380.81,35
+846dc565-2a4f-47ca-993e-0881b0ab58bd,James Inc,Healthcare,2022-10-20,3866133.79,22
+57ab3fc8-fa75-4b02-9f8c-c4d0935b695e,Torres-Jones,Retail,2015-12-14,1538150.63,11
+64a4e711-b5b4-4447-94ce-a23307dffba1,"Cook, Guerrero and Gomez",Food Services,2018-10-25,115902.05,47
+0c5a48b3-a3b9-4d0d-a686-5c8b6541e56e,Stone Ltd,Healthcare,2016-03-24,4862251.68,49
+e86b8c9b-7924-4bb9-a87b-c16d81dffbfa,"Wood, Johnson and Reyes",Construction,2018-08-04,2587640.21,7
+57ad3132-acde-41bd-9dc4-73c319809f56,Young Group,Healthcare,2023-10-18,4224179.81,33
+5c5bad06-bc8e-4887-95db-e29a97572f91,Haney LLC,Manufacturing,2021-04-22,1074664.4,24

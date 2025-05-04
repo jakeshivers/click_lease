@@ -1,0 +1,9 @@
+
+target/
+dbt_packages/
+logs/
+
+
+.click_lease/
+click_lease/snowsql-*.bash
+click_lease/snowsql-*.bash
