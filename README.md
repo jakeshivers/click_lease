@@ -8,7 +8,7 @@ This project simulates a high-risk equipment financing analytics platform using 
 
 - **dbt** – data transformation and warehouse modeling
 - **Snowflake** – cloud data warehouse
-- **Lightdash** – lightweight open-source BI tool
+- **Preset** – lightweight open-source BI tool
 - **Python** – synthetic data generation
 - **Docker Compose** – for local Lightdash setup
 
