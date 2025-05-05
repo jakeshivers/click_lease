@@ -35,15 +35,22 @@ snowsql -f scripts/put_files_to_stage.sql
 ```bash
 dbt run
 ```
+### Documentation with dbt Docs
+This project uses dbt docs for browsable data model documentation, complete with lineage graphs and schema annotations.
 
-### 4. Launch Lightdash locally
+You can generate and view the documentation locally:
 
 ```bash
-cd lightdash
-docker compose up
+dbt docs generate
+dbt docs serve
 ```
+![alt text](screenshots/dbt_lineage.png)
 
-Visit: [http://localhost:8090](http://localhost:8090)
+The documentation includes:
+* Model-level descriptions
+* Column-level metadata
+* Lineage graphs showing dependencies across staging, fact, and summary layers
+* Tags and tests for key models
 
 ---
 
@@ -94,7 +101,6 @@ ANALYTICS (Core Business Models)
 Views: Staging models like STG_APPLICANTS, STG_REPAYMENTS, etc.
 
 Tables: Core data marts like:
-
 - `FACT_LOAN_REPAYMENTS`
 - `FACT_CREDIT_SUMMARY`
 - `FACT_LOANS_OVER_TIME`
@@ -102,10 +108,9 @@ Tables: Core data marts like:
 - `DATE_SPINE`
 
 Used for consistent reporting, time-aligned joins, and centralized metrics.
-
 🔹 ANALYTICS_FINANCE (Executive-Level Metrics)
-Tables: Summarized KPIs and scorecards, such as:
 
+Tables: Summarized KPIs and scorecards, such as:
 - `DEFAULT_RATE_BY_RISK_BAND`
 - `TOP_APPLICANTS_BY_LOAN_VOLUME`
 - `DAILY_LOAN_APPLICATIONS`
@@ -113,27 +118,21 @@ Tables: Summarized KPIs and scorecards, such as:
 
 These feed directly into Lightdash dashboards and reflect metrics optimized for decision-making.
 
-
 ## 📊 Dashboards
 
 Preset dashboards include:
 
 ### 🔹 Industry Approval Summary
-
-📸
 ![alt text](/screenshots/approval_summary.png)
 
 ---
 
 ### 🔹 Heatmap: Default Rate by Industry × Risk Band
-
-📸 *
 ![alt text](screenshots/risk_band.png)
 ---
 
 ### 🔹 Top 10 best deals
-
-📸 ![alt text](screenshots/deals.png)
+![alt text](screenshots/deals.png)
 
 ---
 
